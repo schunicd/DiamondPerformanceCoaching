@@ -1,0 +1,216 @@
+.navbar {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.navbar-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.logo {
+  height: 40px;
+}
+
+/* On desktop, increase the logo size */
+@media (min-width: 1024px) {
+  .logo {
+    height: 50px;
+  }
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-links span {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Hover green effect for all links */
+.nav-links a:hover,
+.nav-links span:hover,
+.nav-links .arrow:hover {
+  color: #009b55;
+}
+
+
+/* Submenu hidden until hover */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-direction: column;
+  z-index: 2;
+  padding: 0.25rem 0;
+  min-width: 200px;
+  list-style: none; /* ✅ Remove bullets */
+  margin: 0;         /* ✅ Remove unwanted spacing */
+  padding-left: 0;   /* ✅ Reset padding */
+  min-width: auto;           /* remove fixed width */
+  width: max-content;        /* fit to content */
+  padding: 0.25rem 0;        /* slight vertical padding */
+}
+
+.dropdown-right span:hover {
+  background-color: #f0f0f0;
+  color: #009b55;
+}
+
+.submenu li {
+  list-style: none; /* ✅ Just in case */
+}
+
+.submenu li a {
+  display: flex;                     /* Match Solutions layout */
+  justify-content: space-between;   /* Align arrow on right */
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: black;
+  font-weight: 500;
+}
+
+.submenu li a:hover {
+  background-color: #f0f0f0;
+  color: #009b55;
+}
+
+.dropdown > .dropdown-toggle:hover + .submenu,
+.dropdown:hover > .submenu {
+  display: flex;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.submenu-right {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-direction: column;
+  z-index: 3;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+/* ✅ Show right submenu ONLY when Corporate (the <li>) is hovered */
+.dropdown-submenu:hover > .submenu-right {
+  display: flex;
+}
+
+.submenu-right li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: black;
+  font-weight: 500;
+}
+
+.submenu-right li a:hover {
+  background-color: #f0f0f0;
+  color: #009b55;
+}
+
+
+.burger {
+  display: none;
+  background: none;
+  border: 2px solid #009b55;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #009b55;
+  margin: 0.5rem auto 0; /* center below the title */
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    position: static;  /* no absolute */
+    align-self: center;
+  }
+
+  .navbar-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .title {
+    position: static;
+    transform: none;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+

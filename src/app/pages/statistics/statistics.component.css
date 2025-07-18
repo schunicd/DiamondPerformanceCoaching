@@ -1,0 +1,70 @@
+/* Global reset to ensure no overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Ensure consistent box sizing across all elements */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Main section */
+.statistics-section {
+  background-image: url('../../../assets/statistics.png');
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  width: 100vw;              /* Ensure no extra space */
+  overflow: hidden;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay setup */
+.overlay {
+  background-color: rgba(0, 102, 179, 0.8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;               /* Prevent vertical growth */
+  margin: 0;
+}
+
+/* Content centered */
+.content {
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Heading */
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Button link */
+.stats-link {
+  display: inline-block;
+  background-color: white;
+  color: #0066b3;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.stats-link:hover {
+  background-color: #e6e6e6;
+}
+

@@ -1,0 +1,13 @@
+/* Global styles */
+/* Eliminate default spacing that causes overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* this line prevents the scrollbar */
+}
+
+/* Ensure social bar spans full width and top */
+app-social-bar {
+  display: block;
+  width: 100%;
+}

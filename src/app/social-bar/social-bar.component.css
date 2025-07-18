@@ -1,0 +1,32 @@
+.social-bar {
+  background-color: #009b55;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
+}
+
+.icons {
+  display: flex;
+  gap: 1.5rem;
+  color: white;
+  font-size: 1.25rem;
+  align-items: center;
+  padding-left: 2.5rem;
+}
+
+.icons a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.icons a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .icons {
+    justify-content: center;
+    padding-left: 0;
+  }
+}

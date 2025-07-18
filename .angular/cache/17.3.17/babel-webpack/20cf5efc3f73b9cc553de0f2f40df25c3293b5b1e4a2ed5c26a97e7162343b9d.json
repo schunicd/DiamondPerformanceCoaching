@@ -1,0 +1,1 @@
+{"ast":null,"code":"menuOpen = false;\ntoggleMenu();\n{\n  this.menuOpen = !this.menuOpen;\n}\nexport class NavbarComponent {}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

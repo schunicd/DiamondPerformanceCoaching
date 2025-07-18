@@ -1,0 +1,44 @@
+<div class="navbar">
+  <div class="navbar-row">
+    <img src="../../assets/Personality-Dimensions-Logo-Canada.png" alt="Logo" class="logo" />
+    <div class="title">DIAMOND PERFORMANCE COACHING</div>
+  </div>
+
+  <!-- Burger menu moved OUTSIDE navbar-row -->
+  <button class="burger" (click)="toggleMenu()">☰</button>
+
+  <ul class="nav-links" [class.active]="menuOpen">
+    <li><a routerLink="home">Home Page</a></li>
+    <li class="dropdown">
+      <span class="dropdown-toggle">About &#9662;</span>
+      <ul class="submenu">
+        <li><a routerLink="about/me">Me</a></li>
+        <li><a routerLink="about/personality-dimensions">Personality Dimensions</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <span class="dropdown-toggle">Solutions &#9662;</span>
+      <ul class="submenu">
+        <!-- Corporate with submenu -->
+        <li class="dropdown-submenu">
+          <a>Corporate &#8250;</a>
+          <ul class="submenu-right">
+            <li><a routerLink="solutions/corporate/sales">Sales</a></li>
+            <li><a routerLink="solutions/corporate/mindset-skills">Mindset Skills</a></li>
+          </ul>
+        </li>
+        <!-- Personal without submenu -->
+        <li class="dropdown-submenu">
+          <a>Personal &#8250;</a>
+          <ul class="submenu-right">
+            <li><a routerLink="solutions/personal/one-on-one">One on One Coaching</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+    <li><a routerLink="statistics">Statistics</a></li>
+    <li><a routerLink="videos">Videos</a></li>
+    <li><a routerLink="contact">Contact</a></li>
+  </ul>
+</div>

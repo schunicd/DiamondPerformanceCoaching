@@ -1,0 +1,69 @@
+<section class="pd-banner">
+  <div class="overlay">
+    <div class="curved-stripe"></div>
+    <div class="banner-text">
+      <h1>ABOUT PERSONALITY DIMENSIONS</h1>
+      <p>
+        Personality Dimensions made its first appearance in 2003, but was many years in the making. 
+        Built on feedback from clients who wanted more out of a personality assessment that also 
+        reflected the cultural diversity in Canada 🍁 of the people they were working with. 
+        Founder and editor, Denise Hughes worked with a team of authors, researchers, facilitators, 
+        and editors to do just this.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+  <p class="intro">
+    Personality Dimensions® is more than an assessment; it’s a self-discovery process that takes complex theories and makes them accessible with plain language, and practical uses. It uses a card sort with pictures, short paragraphs, and a multiple-choice survey, to appeal to different learning styles.
+  </p>
+  <br>
+  <p class="intro">
+    Personality Dimensions® isn’t just colours, it also includes symbols and descriptive names to help better remember not only what the four different Dimensions are, but what they mean.
+  </p>
+  <div class="card-grid">
+    <div *ngFor="let card of cards" class="personality-card" (click)="openModal(card)">
+      <img [src]="card.icon" [alt]="card.title" />
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="selectedCard" (click)="closeModal()">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closeModal()">×</button>
+
+      <div class="modal-content">
+        <div class="modal-image">
+          <img [src]="selectedCard.modalImage || selectedCard.icon" [alt]="selectedCard.title" />
+        </div>
+        <div class="modal-text">
+          <h2 [style.color]="selectedCard.color">{{ selectedCard.title }}</h2>
+          <p *ngFor="let paragraph of selectedCard.description">{{ paragraph }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p class="intro">
+    Personality Dimensions® doesn’t put people into boxes , we are not all one personality/colour; one may be our strongest, but we have elements of the other three. This may change as people get older or as different things happen in life, but our core personality stays the same.
+  </p>
+  <br>
+  <p class="intro">
+    It’s not enough to know just what your personality preference is, but you also need to know where you get your energy from, also known as Introversion & Extraversion. Introverted doesn’t mean “shy” and Extraverted doesn’t mean “outgoing.” It’s all about how people get their energy. Introverts get their energy by having quiet time. Extraverts get their energy from keeping in touch with the people, places and things around them.
+  </p>
+  <br>
+  <p class="intro">
+    Introverts often prefer to do their thinking and planning by themselves. Extraverts enjoy talking and being part of a group. There are, however, outgoing Introverts and shy Extraverts. Some Introverts enjoy being with a group of people, but they may need a quiet time after. Some Extraverts can be quiet and a bit shy at first, but they will become more involved once they are comfortable.
+  </p>
+</section>
+
+<section class="curved-stripe-section">
+  <div class="curved-stripe-overlay"></div>
+  <div class="curved-stripe-content">
+    <h2>HISTORY</h2>
+    <p>The history of Temperament and Personality theory goes back over 2500 years. While the theory has been around for that long, there weren’t a lot of practical applications for it until the 1950s when Briggs and Myers published the findings of their personality assessment, and David Keirsey popularized temperament theory in the 1950s and 1960s with his book and assessment.</p>
+    <p>Personality Dimensions® built on all of this work, and the work of others who came later, including Don Lowry and Linda Berens. It’s important to remember that Personality Dimensions® is not just the work of one person, but is the contributions, research, and ideas of many people that continues to grow.</p>
+  </div>
+</section>

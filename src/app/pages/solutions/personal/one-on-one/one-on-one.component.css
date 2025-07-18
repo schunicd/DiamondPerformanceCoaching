@@ -1,0 +1,13 @@
+.oneOnOne-coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.oneOnOne-coming-soon p {
+  font-size: 2rem;
+  font-style: italic;
+  color: #333;
+}

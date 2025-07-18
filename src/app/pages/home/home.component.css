@@ -1,0 +1,292 @@
+.hero-section {
+  background-image: url('../../../assets/homepage_top_background.png');
+  background-size: cover;
+  background-position: 0% 30%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  min-height: 500px;
+  color: white;
+  overflow: hidden;
+}
+
+/* Full dark overlay */
+.hero-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45); /* Adjust darkness here */
+  z-index: 1;
+}
+
+/* Content container above the overlay */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-width: 450px;
+}
+
+.hero-section h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-button {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.hero-button:hover {
+  background-color: white;
+  color: #000;
+}
+
+.recognize-section {
+  background-color: white;
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
+
+.text-block {
+  max-width: 64rem;
+  margin: 0 auto 4rem auto;
+  opacity: 0;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading.blue {
+  color: #0072b1;
+}
+
+.section-heading.green {
+  color: #009b55;
+}
+
+.section-paragraph {
+  font-size: 1rem;
+  color: black;
+}
+
+.image-grid-section {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.image-card img {
+  width: 100%;
+  height: 500px;              /* Set a shorter fixed height */
+  object-fit: cover;          /* Crop the image nicely */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .image-card img {
+    height: 600px;            /* Slightly taller on large screens if desired */
+  }
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 155, 85, 0.85); /* green overlay */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  transition: top 0.4s ease;
+}
+
+.image-card:hover .overlay {
+  top: 0;
+}
+
+/* Override for this enhanced overlay */
+.overlay.enhanced {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 119, 34, 0.9); /* dark blue */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;               /* 🔹 completely hide initially */
+  pointer-events: none;     /* 🔹 prevent accidental clicks when hidden */
+  transition: opacity 0.4s ease;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.image-card:hover .overlay.enhanced {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-content h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.overlay-content p {
+  font-size: 0.95rem;
+  color: #fff;
+  margin: 0;
+}
+
+.overlay-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.overlay-button:hover {
+  background: #fff;
+  color: #005b96;
+}
+
+.overlay.enhanced h3 {
+  font-size: 2rem; /* Larger text */
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.overlay.enhanced p {
+  width: 75%; /* Wrap at 75% width */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Add this new rule for orange overlay */
+.overlay.enhanced.orange {
+  background-color: rgba(253, 188, 54, 0.9); /* Orange with 90% opacity */
+}
+
+/* Yellow overlay for One on One */
+.overlay.enhanced.yellow {
+  background-color: rgba(0, 91, 150, 0.95); /* #fdbc36 with 90% opacity */
+}
+
+.world-banner {
+  position: relative;
+  background-image: url('../../../assets/homepage_world_banner.png');
+  background-color: #ec781d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 5rem 2rem 6rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+}
+
+.world-banner-content {
+  max-width: 650px;
+  margin-left: 5%;
+}
+
+.world-banner h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.world-banner p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.world-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-section {
+    min-height: 500px;
+  }
+
+  .section-heading {
+    font-size: 2.5rem;
+  }
+
+  .section-paragraph {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 600px;
+  }
+}

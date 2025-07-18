@@ -1,0 +1,24 @@
+<section class="contact-section">
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <h2>Contact Us</h2>
+
+    <div class="radio-group">
+      <label><input type="radio" name="topic" [(ngModel)]="formData.subject" value="Sales" required /> Sales</label>
+      <label><input type="radio" name="topic" [(ngModel)]="formData.subject" value="Mindset Skills" required /> Mindset Skills</label>
+      <label><input type="radio" name="topic" [(ngModel)]="formData.subject" value="One on One Coaching" required /> One on One Coaching</label>
+      <label>
+        <input type="radio" name="topic" [(ngModel)]="formData.subject" value="Other" required /> Other
+      </label>
+    </div>
+
+    <div *ngIf="formData.subject === 'Other'" class="other-field">
+      <input type="text" [(ngModel)]="formData.otherSubject" name="otherSubject" maxlength="50" required />
+      <small>{{ formData.otherSubject?.length || 0 }}/50 characters</small>
+    </div>
+
+    <textarea [(ngModel)]="formData.message" name="message" placeholder="Enter your message" required></textarea>
+
+    <button type="submit">Submit</button>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  </form>
+</section>

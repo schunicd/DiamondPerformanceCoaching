@@ -1,0 +1,258 @@
+.pd-banner {
+  position: relative;
+  height: 400px;
+  background-image: url('../../../../assets/about_pd_banner.png'); 
+  background-size: 100%; /* was 'cover' — now zoomed out */
+  background-position: center 30%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-banner .overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 119, 34, 0.9); /* orange overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.pd-banner .curved-stripe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.08); /* darken the right edge */
+  clip-path: ellipse(60% 100% at 100% 50%);
+  z-index: 1;
+}
+
+.pd-banner .banner-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 900px;
+  text-align: left;
+}
+
+.pd-banner .banner-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.pd-banner .banner-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.how-it-works {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.how-it-works h2 {
+  color: #f37722;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.personality-card {
+  width: 200px;
+  height: 240px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personality-card:hover {
+  transform: scale(1.05);
+}
+
+.personality-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-card {
+  background: white;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.modal-image {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image img {
+  max-width: 200px;
+  height: auto;
+}
+
+.modal-text {
+  flex: 2;
+  min-width: 250px;
+}
+
+.modal-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.modal-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.history-section {
+  position: relative;
+  background-color: #ec7a1c; /* Base orange */
+  color: white;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.curved-stripe-section {
+  position: relative;
+  background-color: #f5963a;/* base orange */
+  color: white;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.curved-stripe-overlay {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 140%;
+  height: 100%;
+  background: #ec7a1c; /* stripe color */
+  clip-path: ellipse(80% 50% at 6% 50%);
+  z-index: 0;
+}
+
+.curved-stripe-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.curved-stripe-content h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.curved-stripe-content p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .modal-card {
+    width: calc(100vw - 2rem); /* Leaves 1rem padding on both sides */
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+    margin-right: 2rem;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .modal-image {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .modal-image img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  .modal-text {
+    padding: 0;
+  }
+
+  .close-button {
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+}
